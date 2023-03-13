@@ -2,7 +2,11 @@
 	<img alt="Vue logo" src="./assets/logo.png" />
 	<h1>contador: {{ isComputed }}</h1>
 	<h1>MapState</h1>
-	<h1>map: {{ counter }}</h1>
+	<h2>map: {{ count }}</h2>
+<h1>Mutations</h1>
+<button @click="increment">+1</button>
+<button @click="incrementBy">+5</button>
+
 	<!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
 </template>
 
@@ -20,10 +24,18 @@
       isComputed(){
         return this.$store.state.count
       },
-      // ...mapState(['count'])
-      ...mapState({
-        counter: state => state.count
-      })
+      ...mapState(['count'])
+      // ...mapState({
+      //   counter: state => state.count
+      // })
+    },
+    methods:{
+      increment(){
+        this.$store.commit('increment')
+      },
+      incrementBy(){
+        this.$store.commit('incrementBy',5)
+      }
     }
 	};
 </script>
