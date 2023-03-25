@@ -8,6 +8,8 @@
 	<button @click="incrementBy">+5</button>
 
 	<button @click="randomInt" :disabled="loading">random</button>
+	<h1>Getters</h1>
+	<p>{{ $store.getters.quaterState }}</p>
 	<!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
 </template>
 

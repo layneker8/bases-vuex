@@ -35,6 +35,11 @@ const store = createStore({
             commit('incrementBy', random)
 
         }
+    },
+    getters:{
+        quaterState(state){
+            return state.count * state.count
+        }
     }
 })
 
